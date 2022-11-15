@@ -159,6 +159,7 @@ a {
 .horizontal {
     display: flex;
     overflow: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
 }
 .page {
@@ -169,7 +170,6 @@ a {
     justify-content: center;
     align-items: left;
     scroll-snap-align: start;
-    padding: 0;
 }
 
 b {
