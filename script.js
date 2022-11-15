@@ -87,7 +87,7 @@ let parameters = {
   hue: .58,
   hueVariation: .20,
   gradient: .3,
-  density: 0.1,
+  density: 0.07,
   displacement: 0.2 };
 
 
