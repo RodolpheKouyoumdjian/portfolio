@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,900");
+
+canvas {
+  display: block;
+  position: fixed;
+}
+
+.world {
+  position: absolute;
+}
+
+.main {
+  position: absolute;
+}
+
+.container {
+  position: absolute;
+}
+
+.logos {
+  margin: 2em 1em;
+  text-align: center;
+}
+
+.logos > span {
+  margin: 3em;
+  color: beige;
+}
