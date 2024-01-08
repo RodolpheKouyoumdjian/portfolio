@@ -1,26 +1,23 @@
-body {
-    height: 100vh;
-    background: #fff;
-    cursor: none;
-    margin: 0;
-    display: flex;
-}
-
-a {
-    cursor: none;
-}
-
-body .cursor {
+.cursor {
     pointer-events: none;
+    font-family: monospace;
+    z-index: 100;
 }
-body .cursor__ball {
+.cursor__ball {
     position: fixed;
-    top: 0;
-    left: 0;
     mix-blend-mode: difference;
-    z-index: 1000;
+    z-index: 100;
+}
+.cursor__ball circle {
+    fill: #f7f8fa;
+    z-index: 100;
 }
 
-body .cursor__ball circle {
-    fill: #f7f8fa;
+.cursor {
+    display: none;
+}
+@media (pointer: fine) {
+    .cursor {
+        display: inline;
+    }
 }

@@ -381,7 +381,7 @@ document.querySelector("#title-4").addEventListener("click", function (event) {
 
 function init() {
     back2bottom();
-    document.querySelector("#bottom-back").setAttribute("href", "./assets/cv/Rodolphe Kouyoumdjian CV copy.pdf");
+    document.querySelector("#bottom-back").setAttribute("href", "./CV.pdf");
     document.querySelector("#bottom-back").setAttribute("download", "RK - CV");
 
     transitionWlink(1, "Education", "", "");
