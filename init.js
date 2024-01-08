@@ -18,7 +18,7 @@ function updateColors() {
     else {
         document.documentElement.style.setProperty(
             "--background-color",
-            "#16141F"
+            "#00001c"
         );
         document.documentElement.style.setProperty(
             "--text-color",
