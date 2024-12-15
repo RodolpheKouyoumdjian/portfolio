@@ -50,10 +50,10 @@ export function HeroSection() {
               <a href="mailto:rodolphe.kouyoumdjian@mail.mcgill.ca">
                 <Button>Contact Me</Button>
               </a>
-              <a href="/assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
+              <a href="./assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
                 <Button variant="outline">Download CV</Button>
               </a>
-              <a href="/assets/Transcript - Official Electronic.pdf" download="Rodolphe_Kouyoumdjian_Transcript.pdf">
+              <a href="./assets/Transcript - Official Electronic.pdf" download="Rodolphe_Kouyoumdjian_Transcript.pdf">
                 <Button variant="outline">Download Transcript</Button>
               </a>
             </div>
