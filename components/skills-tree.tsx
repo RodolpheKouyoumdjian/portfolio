@@ -95,7 +95,7 @@ export function SkillsTree() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          className="mt-16 grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
         >
           {skills.map((skill, index) => (
             <motion.div
@@ -106,9 +106,9 @@ export function SkillsTree() {
               viewport={{ once: true }}
               className="group relative flex items-center justify-center"
             >
-              <img 
+              <img
                 className="h-24 w-24 transition-transform duration-300 group-hover:scale-110"
-                src={ skill.icon }
+                src={skill.icon}
               />
             </motion.div>
           ))}

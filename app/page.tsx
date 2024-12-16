@@ -6,7 +6,7 @@ import { SkillsTree } from "@/components/skills-tree"
 
 export default function Home() {
   return (
-    <main>
+    <main className="!overflow-x-hidden">
       <NavBar />
       <HeroSection />
       <EducationSection />

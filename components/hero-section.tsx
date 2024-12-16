@@ -1,11 +1,21 @@
 "use client"
 
+import React from "react";
+
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from 'lucide-react'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 export function HeroSection() {
+
   return (
     <section className="relative min-h-screen pt-16">
       <div className="mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
@@ -23,7 +33,7 @@ export function HeroSection() {
                 Rodolphe
               </span>
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
+            <p className="mt-6 text-lg text-gray-600 dark:text-white">
               Developer & Student
             </p>
             <div className="mt-8 flex gap-4">
@@ -46,62 +56,138 @@ export function HeroSection() {
                 </Button>
               </Link>
             </div>
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <a href="mailto:rodolphe.kouyoumdjian@mail.mcgill.ca">
                 <Button>Contact Me</Button>
               </a>
-              <a href="./assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
-                <Button variant="outline">Download CV</Button>
-              </a>
-              <a href="./assets/Transcript - Official Electronic.pdf" download="Rodolphe_Kouyoumdjian_Transcript.pdf">
-                <Button variant="outline">Download Transcript</Button>
-              </a>
+              <div className="hidden sm:flex gap-4">
+                <a href="./assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
+                  <Button variant="outline">Download CV</Button>
+                </a>
+                <a href="./assets/Transcript - Official Electronic.pdf" download="Rodolphe_Kouyoumdjian_Transcript.pdf">
+                  <Button variant="outline">Download Transcript</Button>
+                </a>
+              </div>
+              <div className="flex sm:hidden">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">Download</Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem asChild>
+                      <a href="./assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
+                        CV
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="./assets/Transcript - Official Electronic.pdf" download="Rodolphe_Kouyoumdjian_Transcript.pdf">
+                        Transcript
+                      </a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative rounded-lg border bg-slate-900 p-4 font-mono text-sm text-slate-100 shadow-xl"
-          >
-            <div className="mb-4 flex gap-1.5">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
-            </div>
-            <pre className="space-y-2">
-              <code className="text-blue-400">const</code>{" "}
-              <code className="text-pink-400">developer</code> = {"{"}
-              <br />
-              {"  "}name: <code className="text-green-400">&apos;Rodolphe Kouyoumdjian&apos;</code>,
-              <br />
-              {"  "}title: <code className="text-green-400">&apos;Developer&apos;</code>,
-              <br />
-              {"  "}specialties: [
-              <br />
-              {"    "}<code className="text-green-400">&apos;Data analyst;</code>,
-              <br />
-              {"    "}<code className="text-green-400">&apos;AI Enthusiast&apos;</code>,
-              <br />
-              {"    "}<code className="text-green-400">&apos;Web Creator&apos;</code>,
-              <br />
-              {"    "}<code className="text-green-400">&apos;Mobile Apps Innovator&apos;</code>,
-              <br />
-              {"    "}<code className="text-green-400">&apos;Multilingual&apos;</code>
-              <br />
-              {"  "}],
-              <br />
-              {"  "}contact:{" "}
-              <code className="text-green-400">
-                &apos;rodolphe.kouyoumdjian@mail.mcgill.ca&apos;
-              </code>
-              <br />
-              {"}"}
-            </pre>
-          </motion.div>
+
+          <CodeSection />
+
         </div>
       </div>
     </section>
   )
 }
 
+function CodeSection() {
+  return (
+    <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+      <div className="flex flex-row">
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+      </div>
+      <div className="px-4 lg:px-8 py-5">
+        <div className="flex flex-row space-x-2">
+          <div className="h-3 w-3 rounded-full bg-red-400"></div>
+          <div className="h-3 w-3 rounded-full bg-orange-400"></div>
+          <div className="h-3 w-3 rounded-full bg-green-200"></div>
+        </div>
+      </div>
+      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+        <code className="font-mono text-xs md:text-sm lg:text-base">
+          <div className="blink">
+            <span className="mr-2 text-blue-400">const</span>
+            <span className="mr-2 text-pink-500">coder</span>
+            <span className="mr-2 text-white">=</span>
+            <span className="text-white">{'{'}</span>
+          </div>
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
+            <span className="text-white">{`'`}</span>
+            <span className="text-amber-400">Rodolphe Kouyoumdjian</span>
+            <span className="text-white">{`',`}</span>
+          </div>
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">title:</span>
+            <span className="text-white">{`'`}</span>
+            <span className="text-amber-400">Developer</span>
+            <span className="text-white">{`',`}</span>
+          </div>
+                           <div className="ml-4 lg:ml-8 mr-2">
+                    <span className="text-white">skills: </span>
+                    <span className="text-white">{`[`}</span><br />
+                    <span className="ml-4 lg:ml-8 text-amber-400">"Data analysis"</span><span className="text-white">,</span><br />
+                    <span className="ml-4 lg:ml-8 text-amber-400">"AI"</span><span className="text-white">,</span><br />
+                    <span className="ml-4 lg:ml-8 text-amber-400">"Web Dev"</span><span className="text-white">,</span><br />
+                    <span className="ml-4 lg:ml-8 text-amber-400">"Mobile Dev"</span><span className="text-white">,</span><br />
+                    <span className="ml-4 lg:ml-8 text-amber-400">"Languages"</span><span className="text-white">,</span><br />
+                    <span className="ml-4 lg:ml-8 text-amber-400">"Team building"</span><br />
+                    <span className="text-white">{`]`}</span>
+                  </div>
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">worksHard:</span>
+            <span className="text-blue-400">true</span>
+            <span className="text-white">,</span>
+          </div>
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">learnsFast:</span>
+            <span className="text-blue-400">true</span>
+            <span className="text-white">,</span>
+          </div>
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">issuesUnsolved:</span>
+            <span className="text-lime-400">0</span>
+            <span className="text-white">,</span>
+          </div>
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">shouldHire:</span>
+            <span className="text-orange-400">function</span>
+            <span className="text-white">{'(): bool {'}</span>
+          </div>
+          <div>
+            <span className="ml-8 lg:ml-16 mr-2 text-orange-400">return</span>
+            <span className="text-white">{`(`}</span>
+          </div>
+          <div>
+            <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+            <span className="mr-2 text-white">worksHard</span>
+            <span className="text-amber-400">&amp;&amp;</span>
+          </div>
+          <div>
+            <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+            <span className="mr-2 text-white">solvesProblems</span>
+            <span className="text-amber-400">&amp;&amp;</span>
+          </div>
+          <div>
+            <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+            <span className="mr-2 text-white">issuesUnsolved</span>
+            <span className="mr-2 text-amber-400">&ne;</span>
+            <span className="text-orange-400">0</span>
+          </div>
+          <div><span className="ml-8 lg:ml-16 mr-2 text-white">{`);`}</span></div>
+          <div><span className="ml-4 lg:ml-8 text-white">{`};`}</span></div>
+          <div><span className="text-white">{`};`}</span></div>
+        </code>
+      </div>
+    </div>
+  )
+}

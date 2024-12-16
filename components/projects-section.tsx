@@ -74,7 +74,7 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative flex ${index % 2 === 0 ? 'justify-end pr-[calc(50%+2rem)]' : 'justify-start pl-[calc(50%+2rem)]'}`}
+                className={`relative flex flex-col items-center sm:flex-row ${index % 2 === 0 ? 'sm:justify-end sm:pr-[calc(50%+2rem)]' : 'sm:justify-start sm:pl-[calc(50%+2rem)]'}`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 top-8 -ml-1.5 h-3 w-3 rounded-full bg-blue-600" />
@@ -104,4 +104,3 @@ export function ProjectsSection() {
     </section>
   )
 }
-

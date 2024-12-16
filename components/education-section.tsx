@@ -35,7 +35,7 @@ const education = [
 
 export function EducationSection() {
   return (
-    <section id="education" className="pt-8 pb-12">
+    <section id="education" className="pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl font-bold">Education</h2>
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
