@@ -1,4 +1,5 @@
 import { EducationSection } from "@/components/education-section"
+import ExperienceSection from "@/components/experience-section"
 import { HeroSection } from "@/components/hero-section"
 import { NavBar } from "@/components/nav-bar"
 import { ProjectsSection } from "@/components/projects-section"
@@ -9,6 +10,7 @@ export default function Home() {
     <main className="!overflow-x-hidden">
       <NavBar />
       <HeroSection />
+      <ExperienceSection />
       <EducationSection />
       <ProjectsSection />
       <SkillsTree />

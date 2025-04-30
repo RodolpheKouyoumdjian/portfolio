@@ -5,6 +5,16 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const projects = [
   {
+    title: "SQL Interpreter & Query Optimizer",
+    date: "Winter 2024",
+    description: "SQL interpreter and query optimizer to improve query efficiency",
+    details: [
+      "Developed an SQL interpreter and query optimizer in Java to improve query efficiency and data retrieval",
+      "Applied advanced data structures and optimization techniques to enhance performance",
+    ],
+    tech: "Java, Data Structures, Query Optimization",
+  },
+  {
     title: "Holoquiz",
     date: "Winter 2024",
     description: "Health-oriented AI powered quiz making game for students",
@@ -14,36 +24,24 @@ const projects = [
     tech: "OpenAI API, Python, Arduino",
   },
   {
-    title: "Allons Burger",
-    date: "Summer 2023",
-    description: "Mobile restaurant ordering app",
-    details: [
-      "Built a mobile app and backend using various technologies to improve efficiency and costs. Provided eat-in or delivery options.",
-      "Payment processing, APIs, Authentication, Databases",
-    ],
-    tech: "Flutter (Dart), express.js (TypeScript), Stripe, Firebase",
-  },
-  {
     title: "scryblr.com",
-    date: "Winter 2023",
-    description: "AI content creation and collaboration platform for marketers",
+    date: "Summer 2023",
+    description: "Full-stack app for content creation using LLMs",
     details: [
-      "Launched a full stack SAAS application",
-      "Payment processing, Authentication, Databases, Marketing",
+      "Developed a full-stack app, integrating authentication, a database and an LLM API to improve UX",
     ],
-    tech: "HTML, CSS JavaScript, Flask (Python), Stripe, Firebase, Marketing (Twitter, YouTube, Instagram)",
+    tech: "Flask, HTML, CSS, Javascript",
   },
   {
     title: "PairIt",
     date: "Summer 2022",
-    description: "Language learning game for iOS",
+    description: "iOS language learning game using spaced repetition",
     details: [
-      "Inspired by the card game 'Memory', created a language learning game",
-      "Scraped Project Gutenberg for word frequencies in 100+ languages",
-      "Implemented spaced repetition algorithm",
-      "200+ downloads",
+      "Built an iOS language learning game to match words across languages using SwiftUI and a custom spaced repetition algorithm",
+      "Scraped and processed 50+ GB of multilingual data from Project Gutenberg to generate frequency-based word pairs",
+      "Used parallel concurrency in Python to accelerate data processing by 100x, enabling scalable smart recommendations",
     ],
-    tech: "Swift UI, Xcode, Python",
+    tech: "SwiftUI, Xcode, Python",
   },
   {
     title: "Asset Allocation",
@@ -55,17 +53,17 @@ const projects = [
     ],
     tech: "Python, Statistics, data analysis",
   },
-]
+];
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="relative py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold text-blue-600">Projects & Experiences</h2>
+        <h2 className="text-center text-3xl font-bold text-blue-600">Projects</h2>
         <div className="relative mt-16">
           {/* Timeline line */}
           <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-blue-600" />
-          
+
           <div className="space-y-24">
             {projects.map((project, index) => (
               <motion.div
@@ -78,7 +76,7 @@ export function ProjectsSection() {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 top-8 -ml-1.5 h-3 w-3 rounded-full bg-blue-600" />
-                
+
                 <Card className="w-full max-w-lg shadow-lg">
                   <CardContent className="p-6">
                     <div className="mb-4">
