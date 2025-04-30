@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { GraduationCap } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
 
 const education = [
   {
@@ -14,6 +14,7 @@ const education = [
       "3.86 / 4.0 GPA",
       "Relevant Coursework: Fundamentals of Statistical Learning, Intro to Statistical Computing",
     ],
+    logo: "./assets/mcgill_logo.png",
   },
   {
     school: "King's College London",
@@ -23,6 +24,7 @@ const education = [
     details: [
       "Relevant Coursework: Mathematical Finance I: Discrete Time, Machine Learning for Biomedical Applications",
     ],
+    logo: "./assets/kcl_logo.svg",
   },
   {
     school: "University of Edinburgh",
@@ -30,6 +32,7 @@ const education = [
     location: "Edinburgh, Scotland",
     date: "Winter 2024",
     details: ["Relevant Coursework: Entrepreneurship and Innovation Project"],
+    logo: "./assets/uoe_logo.svg",
   },
 ]
 
@@ -50,7 +53,14 @@ export function EducationSection() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <GraduationCap className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    {/* <GraduationCap className="h-5 w-5 text-blue-600 dark:text-blue-400" /> */}
+                    <Image 
+                      src={edu.logo}
+                      alt={`${edu.school} logo`}
+                      width={40}
+                      height={40}
+                      className="h-15"
+                    />
                     {edu.school}
                   </CardTitle>
                 </CardHeader>

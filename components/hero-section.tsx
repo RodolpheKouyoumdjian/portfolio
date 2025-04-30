@@ -61,7 +61,7 @@ export function HeroSection() {
                 <Button>Contact Me</Button>
               </a>
               <div className="hidden sm:flex gap-4">
-                <a href="./assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
+                <a href="./assets/rodolphe_kouyoumdjian_resume.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
                   <Button variant="outline">Download CV</Button>
                 </a>
                 <a href="./assets/Transcript - Official Electronic.pdf" download="Rodolphe_Kouyoumdjian_Transcript.pdf">
@@ -75,7 +75,7 @@ export function HeroSection() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem asChild>
-                      <a href="./assets/CV Masters.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
+                      <a href="./assets/rodolphe_kouyoumdjian_resume.pdf" download="Rodolphe_Kouyoumdjian_CV.pdf">
                         CV
                       </a>
                     </DropdownMenuItem>
