@@ -37,7 +37,7 @@ export function HeroSection() {
               Developer & Student
             </p>
             <div className="mt-8 flex gap-4">
-              <Link href="https://github.com/RodolpheKouyoumdjian" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/rodolphekouyoumdjian" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="icon" className="bg-white dark:bg-slate-900">
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
@@ -49,7 +49,7 @@ export function HeroSection() {
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="mailto:rodolphe.kouyoumdjian@mail.mcgill.ca">
+              <Link href="mailto:kouyoumdjianrodolphe@gmail.com">
                 <Button variant="outline" size="icon" className="bg-white dark:bg-slate-900">
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
@@ -57,7 +57,7 @@ export function HeroSection() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="mailto:rodolphe.kouyoumdjian@mail.mcgill.ca">
+              <a href="mailto:kouyoumdjianrodolphe@gmail.com">
                 <Button>Contact Me</Button>
               </a>
               <div className="hidden sm:flex gap-4">
