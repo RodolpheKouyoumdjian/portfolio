@@ -7,12 +7,12 @@ import Image from "next/image"
 const education = [
   {
     school: "McGill University",
-    degree: "BSc Computer Science",
-    location: "Montreal, Canada",
-    date: "Autumn 2022 - Winter 2025",
+    degree: "Bachelor of Science, Computer Science, 3.7 GPA",
+    location: "Montreal, Quebec, Canada",
+    date: "2022 -- 2025 (Graduated)",
     details: [
-      "3.86 / 4.0 GPA",
-      "Relevant Coursework: Fundamentals of Statistical Learning, Intro to Statistical Computing",
+      "Study abroad: University of Edinburgh (Winter 2024), King's College London (Autumn 2024)",
+      "Coursework: Statistical Learning, Statistical Computing, Brain-Inspired AI, Time Series Analysis, Database Systems, Mathematical Finance, Machine Learning for Biomedical Applications, Entrepreneurship and Innovation",
     ],
     logo: "./assets/mcgill_logo.png",
   },
