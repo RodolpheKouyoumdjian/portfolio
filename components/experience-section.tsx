@@ -50,7 +50,7 @@ const experiences = [
         technologies: ["Next.js", "MongoDB", "NextAuth", "Stripe", "GitHub Actions", "OpenAI"],
     },
     {
-        title: "Full-stack Engineer",
+        title: "Full-Stack Engineering Intern",
         company: "Avocado",
         location: "Montreal, Canada (Remote)",
         date: "May 2024 - Aug 2024",
@@ -72,18 +72,6 @@ const experiences = [
             "Integrated DoorDash deliveries at a flat per-order fee instead of the 20-30% commission charged by delivery apps",
         ],
         technologies: ["Dart", "Spring Boot", "Stripe", "DoorDash API"],
-    },
-    {
-        title: "Lead Developer",
-        company: "PairIt",
-        location: "Montreal, Canada (Remote)",
-        date: "May 2022 - Aug 2022",
-        description: "Built an iOS language-learning game and its data tooling",
-        details: [
-            "Built an iOS app in SwiftUI with a spaced-repetition recommendation engine",
-            "Scraped multilingual text and generated word-frequency lists with a parallel data pipeline",
-        ],
-        technologies: ["SwiftUI", "Python", "iOS"],
     },
 ]
 
