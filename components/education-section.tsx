@@ -1,15 +1,12 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
+import { Section } from "@/components/section"
 
 const education = [
   {
     school: "McGill University",
     degree: "Bachelor of Science, Computer Science, 3.7 GPA",
     location: "Montreal, Quebec, Canada",
-    date: "2022 -- 2025 (Graduated)",
+    date: "2022 - 2025",
     details: [
       "Study abroad: University of Edinburgh (Winter 2024), King's College London (Autumn 2024)",
       "Coursework: Statistical Learning, Statistical Computing, Brain-Inspired AI, Time Series Analysis, Database Systems, Mathematical Finance, Machine Learning for Biomedical Applications, Entrepreneurship and Innovation",
@@ -38,48 +35,26 @@ const education = [
 
 export function EducationSection() {
   return (
-    <section id="education" className="pb-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold">Education</h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {education.map((edu, index) => (
-            <motion.div
-              key={edu.school}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    {/* <GraduationCap className="h-5 w-5 text-blue-600 dark:text-blue-400" /> */}
-                    <Image 
-                      src={edu.logo}
-                      alt={`${edu.school} logo`}
-                      width={40}
-                      height={40}
-                      className="h-15"
-                    />
-                    {edu.school}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-medium">{edu.degree}</p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{edu.location}</p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{edu.date}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    {edu.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <Section id="education" title="Education">
+      <ul className="space-y-6">
+        {education.map((edu) => (
+          <li key={edu.school} className="flex gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-zinc-200 bg-white p-1.5 dark:border-zinc-800">
+              <Image src={edu.logo} alt={`${edu.school} logo`} width={32} height={32} className="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-baseline gap-x-3">
+                <h3 className="font-semibold">{edu.school}</h3>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400">{edu.date}</span>
+              </div>
+              <p className="text-sm text-zinc-700 dark:text-zinc-300">{edu.degree}</p>
+              {edu.details.map((detail) => (
+                <p key={detail} className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{detail}</p>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </Section>
   )
 }
-

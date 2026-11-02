@@ -1,9 +1,40 @@
-"use client"
+import { ArrowUpRight } from "lucide-react"
+import { Section } from "@/components/section"
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
+type Project = {
+  title: string
+  date: string
+  description: string
+  details: string[]
+  tech: string
+  link?: string
+}
 
-const projects = [
+const projects: Project[] = [
+  {
+    title: "Drift",
+    date: "Summer 2026",
+    description: "Open-source dependency-upgrade checker for developers and coding agents",
+    details: [
+      "Built a CLI and GitHub Action that downloads both versions of an upgraded dependency and finds the affected call sites by file and line, across 17 package ecosystems",
+      "Scored 83.9% precision and 97.6% recall on 16,333 real-world npm API changes from a public research corpus",
+      "Serves its analysis to coding agents over MCP and checks AI-generated fixes file by file, reverting any that weaken tests",
+      "Published on npm as @usedrift/cli (2,000+ downloads in September 2026), with a VS Code extension and GitHub Action",
+    ],
+    tech: "TypeScript, Node.js, MCP, VS Code API",
+    link: "https://github.com/trydrift/drift",
+  },
+  {
+    title: "Scout",
+    date: "Autumn 2026",
+    description: "Local-first AI job-search system",
+    details: [
+      "Built a local daemon, a Chrome/Safari (MV3) extension that fills application forms deterministically and stops before submission, and a React dashboard",
+      "Exposed it to Claude through an MCP server: job search over 760k+ postings, fit scoring, deduplication and application tracking, with schema-checked tool calls and approval before anything is sent",
+      "Generated tailored CVs on a LaTeX template, constrained to verified experience",
+    ],
+    tech: "TypeScript, React, SQLite, MCP, Chrome Extensions",
+  },
   {
     title: "SQL Interpreter & Query Optimizer",
     date: "Winter 2024",
@@ -19,9 +50,9 @@ const projects = [
     date: "Winter 2024",
     description: "Health-oriented AI powered quiz making game for students",
     details: [
-      "In a team of 4, conceived the software and hardware to generate a health quiz using AI for students to learn in a more interactive way",
+      "Wrote all the software in a 6-person team: Raspberry Pi button and touchscreen handling, and a Python pipeline that generates quiz questions with GPT as structured JSON and grades answers live",
     ],
-    tech: "OpenAI API, Python, Arduino",
+    tech: "OpenAI API, Python, Raspberry Pi",
   },
   {
     title: "scryblr.com",
@@ -57,48 +88,35 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold text-blue-600">Projects</h2>
-        <div className="relative mt-16">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-blue-600" />
-
-          <div className="space-y-24">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`relative flex flex-col items-center sm:flex-row ${index % 2 === 0 ? 'sm:justify-end sm:pr-[calc(50%+2rem)]' : 'sm:justify-start sm:pl-[calc(50%+2rem)]'}`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-1/2 top-8 -ml-1.5 h-3 w-3 rounded-full bg-blue-600" />
-
-                <Card className="w-full max-w-lg shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold">{project.title}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{project.date}</p>
-                    </div>
-                    <p className="mb-4 font-medium">{project.description}</p>
-                    <ul className="mb-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                      {project.details.map((detail, i) => (
-                        <li key={i}>{detail}</li>
-                      ))}
-                    </ul>
-                    <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                      {project.tech}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+    <Section id="projects" title="Projects">
+      <div className="grid gap-4 sm:grid-cols-2">
+        {projects.map((project) => (
+          <article
+            key={project.title}
+            className="flex flex-col rounded-xl border border-zinc-200 p-5 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
+          >
+            <div className="flex items-baseline justify-between gap-3">
+              <h3 className="font-semibold">
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400">
+                    {project.title} <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                ) : (
+                  project.title
+                )}
+              </h3>
+              <span className="shrink-0 text-xs text-zinc-500 dark:text-zinc-400">{project.date}</span>
+            </div>
+            <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-300">{project.description}</p>
+            <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-zinc-600 marker:text-zinc-300 dark:text-zinc-400 dark:marker:text-zinc-600">
+              {project.details.map((detail) => (
+                <li key={detail}>{detail}</li>
+              ))}
+            </ul>
+            <p className="mt-auto pt-4 text-xs font-medium text-blue-600 dark:text-blue-400">{project.tech}</p>
+          </article>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }

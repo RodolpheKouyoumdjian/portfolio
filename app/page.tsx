@@ -7,14 +7,18 @@ import { SkillsTree } from "@/components/skills-tree"
 
 export default function Home() {
   return (
-    <main className="!overflow-x-hidden">
+    <>
       <NavBar />
-      <HeroSection />
-      <ExperienceSection />
-      <EducationSection />
-      <ProjectsSection />
-      <SkillsTree />
-    </main>
+      <main className="mx-auto max-w-4xl px-5">
+        <HeroSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <EducationSection />
+        <SkillsTree />
+        <footer className="border-t border-zinc-200 py-10 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+          ro.kouyoumdjian@gmail.com · London
+        </footer>
+      </main>
+    </>
   )
 }
-

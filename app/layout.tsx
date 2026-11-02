@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Rodolphe Kouyoumdjian | Portfolio",
-  description: "Full-Stack Developer & AI Enthusiast",
+  description: "Software Engineer in London: full-stack, AI agents and MCP",
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-slate-900">
+        <div className="relative min-h-screen bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
           {children}
         </div>
       </body>
